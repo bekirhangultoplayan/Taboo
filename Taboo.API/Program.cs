@@ -15,6 +15,9 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+
+Taboo.Business.ServiceConfiguration.DependencyConfiguration.ConfigureServices(builder.Services);
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

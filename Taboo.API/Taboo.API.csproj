@@ -20,6 +20,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Taboo.Business\Taboo.Business.csproj" />
+    <ProjectReference Include="..\Taboo.Data\Taboo.Data.csproj" />
     <ProjectReference Include="..\Taboo.Entity\Taboo.Entity.csproj" />
   </ItemGroup>
 
