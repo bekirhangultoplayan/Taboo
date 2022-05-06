@@ -3,15 +3,21 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32210.238
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Taboo.API", "Taboo.API\Taboo.API.csproj", "{544395CD-3B8A-44DD-9A02-B938EFCB2A94}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Taboo.API", "Taboo.API\Taboo.API.csproj", "{544395CD-3B8A-44DD-9A02-B938EFCB2A94}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Taboo.Entity", "Taboo.Entity\Taboo.Entity.csproj", "{5DB1A283-D14B-4544-B265-56C46F42F3A2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Taboo.Entity", "Taboo.Entity\Taboo.Entity.csproj", "{5DB1A283-D14B-4544-B265-56C46F42F3A2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Taboo.Business", "Taboo.Business\Taboo.Business.csproj", "{6B67F613-DA14-414E-A52B-025A64A40CE6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Taboo.Business", "Taboo.Business\Taboo.Business.csproj", "{6B67F613-DA14-414E-A52B-025A64A40CE6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Taboo.Data", "Taboo.Data\Taboo.Data.csproj", "{ACB97A53-023E-44CD-A707-F5272C76BF4C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Taboo.Data", "Taboo.Data\Taboo.Data.csproj", "{ACB97A53-023E-44CD-A707-F5272C76BF4C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Taboo.AddedWord", "Taboo.AddedWord\Taboo.AddedWord.csproj", "{877C6F3F-8411-4D89-BB59-EBDE9A7152D2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Taboo.AddedWord", "Taboo.AddedWord\Taboo.AddedWord.csproj", "{877C6F3F-8411-4D89-BB59-EBDE9A7152D2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Taboo.Web", "Taboo.Web\Taboo.Web.csproj", "{6C1130DC-AE96-4627-8446-6EA4A092C4A0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Taboo.ApiClient", "Taboo.ApiClient\Taboo.ApiClient.csproj", "{A8AC6329-ADBA-49C3-A380-64A11DC9A0AF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Taboo.DesktopForm", "Taboo.DesktopForm\Taboo.DesktopForm.csproj", "{14EA8CE1-0D04-4BFD-8719-6062AFF8CE8E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +45,18 @@ Global
 		{877C6F3F-8411-4D89-BB59-EBDE9A7152D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{877C6F3F-8411-4D89-BB59-EBDE9A7152D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{877C6F3F-8411-4D89-BB59-EBDE9A7152D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C1130DC-AE96-4627-8446-6EA4A092C4A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C1130DC-AE96-4627-8446-6EA4A092C4A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C1130DC-AE96-4627-8446-6EA4A092C4A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C1130DC-AE96-4627-8446-6EA4A092C4A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A8AC6329-ADBA-49C3-A380-64A11DC9A0AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8AC6329-ADBA-49C3-A380-64A11DC9A0AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8AC6329-ADBA-49C3-A380-64A11DC9A0AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8AC6329-ADBA-49C3-A380-64A11DC9A0AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14EA8CE1-0D04-4BFD-8719-6062AFF8CE8E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14EA8CE1-0D04-4BFD-8719-6062AFF8CE8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14EA8CE1-0D04-4BFD-8719-6062AFF8CE8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14EA8CE1-0D04-4BFD-8719-6062AFF8CE8E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
