@@ -12,20 +12,11 @@ namespace Taboo.DesktopForm
         {
             InitializeComponent();
             _apiService = apiService;
+          
         }
-
-        private async void btnNewGame_Click(object sender, EventArgs e)
+        private async void Form1_Load(object sender, EventArgs e)
         {
-            lblPuan.Text = "0";
-            var result = await (_apiService.CreateGame(new Data.RequestModel.GameAddRequestModel
-            {
-                Name = Guid.NewGuid().ToString()
-            }));
-            if (result.IsResponseSuccessfull && result.Response != null)
-            {
-                _gameId = result.Response.Id;
-                await GetWord();
-            }
+            await TimerSetup();
         }
         private async Task GetWord()
         {
@@ -68,23 +59,82 @@ namespace Taboo.DesktopForm
         private async void btnTrue_Click(object sender, EventArgs e)
         {
             lblPuan.Text = (int.Parse(lblPuan.Text) + 1).ToString();
-            var result = await (_apiService.SetOutWord(new Data.RequestModel.OutWordRequestModel
-            {
-                GameId = _gameId,
-                WordId = _wordId,
-            }));
+            await SetOutWord();
             await GetWord();
         }
 
         private async void btnFalse_Click(object sender, EventArgs e)
         {
             lblPuan.Text = (int.Parse(lblPuan.Text) - 1).ToString();
+            await SetOutWord();
+            await GetWord();
+        }
+        private async Task SetOutWord()
+        {
             var result = await (_apiService.SetOutWord(new Data.RequestModel.OutWordRequestModel
             {
                 GameId = _gameId,
                 WordId = _wordId,
             }));
-            await GetWord();
         }
+        private async Task RefreshGame()
+        {
+            if (_gameId == 0)
+            {
+                await NewGame();
+            }
+            counter = 60;
+            lblTimer.Text = counter.ToString();
+            lblPuan.Text = "0";
+            timer1.Stop();
+            timer1.Start();
+            await SetOutWord();
+            await GetWord();
+
+        }
+        private int counter = 60;
+        private async void timer1_Tick(object sender, EventArgs e)
+        {
+            counter--;
+            if (counter == 0)
+                timer1.Stop();
+            lblTimer.Text = counter.ToString();
+        }
+
+        private async void yeniOyunToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            await NewGame();
+        }
+        private async Task NewGame()
+        {
+            timer1.Interval = 1000;
+            timer1.Stop(); 
+            counter = 60; 
+            lblTimer.Text = counter.ToString();
+            lblPuan.Text = "0";
+            var result = await (_apiService.CreateGame(new Data.RequestModel.GameAddRequestModel
+            {
+                Name = Guid.NewGuid().ToString()
+            }));
+            if (result.IsResponseSuccessfull && result.Response != null)
+            {
+                _gameId = result.Response.Id;
+            }
+        }
+
+        private async void btnReset_Click(object sender, EventArgs e)
+        {
+            await RefreshGame();
+        }
+        private System.Windows.Forms.Timer timer1;
+        private async Task TimerSetup()
+        {
+            timer1 = new System.Windows.Forms.Timer();
+            timer1.Tick += new EventHandler(timer1_Tick);
+            timer1.Interval = 1000; // 1 second
+             
+        }
+
+       
     }
 }
